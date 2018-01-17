@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Counter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="template.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="GZt-Gd-oQM">
+                                <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Fyu-Ho-brQ" appends="YES" id="vFk-cB-QMI"/>
+                                </connections>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rlH-yc-EOP">
+                                <rect key="frame" x="71" y="58" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="M€"/>
+                                <connections>
+                                    <action selector="meResourceSent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HWd-A8-AbI"/>
+                                    <action selector="resourceWasTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KTL-Bw-dre"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HYf-I6-r42">
+                                <rect key="frame" x="261" y="58" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Steel"/>
+                                <connections>
+                                    <action selector="steelResourceSent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZnW-Pc-cMe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wc5-os-oSg">
+                                <rect key="frame" x="71" y="219" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Plants"/>
+                                <connections>
+                                    <action selector="plantResourceSent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ebN-ZX-v8P"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tu1-bF-eDz">
+                                <rect key="frame" x="261" y="219" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Energy"/>
+                                <connections>
+                                    <action selector="energyResourceSent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rea-2l-obM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dG9-f1-HHT">
+                                <rect key="frame" x="452" y="58" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Titanium"/>
+                                <connections>
+                                    <action selector="titaniumResourceSent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yNL-sg-KD8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cB9-RE-3yg">
+                                <rect key="frame" x="452" y="219" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Heat"/>
+                                <connections>
+                                    <action selector="heatResourceSent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vfM-38-Y8R"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zSg-F8-Kli">
+                                <rect key="frame" x="144" y="0.0" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="M€ Production"/>
+                                <connections>
+                                    <action selector="meProductionSent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zlz-6h-CvY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lKp-ub-VD1">
+                                <rect key="frame" x="333" y="0.0" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Steel Production"/>
+                                <connections>
+                                    <action selector="steelProductionSent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Z0s-0f-Mu6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sAV-wv-8gU">
+                                <rect key="frame" x="522" y="0.0" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Titanium Production"/>
+                                <connections>
+                                    <action selector="titaniumProductionSent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="n8K-yc-zq4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jy6-xK-rZ4">
+                                <rect key="frame" x="333" y="159" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Energy Production"/>
+                                <connections>
+                                    <action selector="energyProductionSent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VCS-uS-Vua"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQn-Hg-zyE">
+                                <rect key="frame" x="522" y="159" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Heat Production"/>
+                                <connections>
+                                    <action selector="heatProductionSent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tns-TT-aI4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QLF-wU-bcY">
+                                <rect key="frame" x="144" y="159" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Plant Production"/>
+                                <connections>
+                                    <action selector="plantProductionSent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gkW-J9-4Eb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mwj-og-fUe">
+                                <rect key="frame" x="0.0" y="130" width="61" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Terraform Rating"/>
+                                <connections>
+                                    <action selector="terraformRatingSent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="855-nZ-lgw"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <connections>
+                        <outlet property="energyButton" destination="tu1-bF-eDz" id="rjr-q7-ncY"/>
+                        <outlet property="energyProductionButton" destination="Jy6-xK-rZ4" id="b5I-re-452"/>
+                        <outlet property="heatButton" destination="cB9-RE-3yg" id="pWa-OB-tnL"/>
+                        <outlet property="heatProductionButton" destination="lQn-Hg-zyE" id="8zH-5W-s0G"/>
+                        <outlet property="moneyButton" destination="rlH-yc-EOP" id="TLU-Pk-2QK"/>
+                        <outlet property="moneyProductionButton" destination="zSg-F8-Kli" id="1ik-F7-HDR"/>
+                        <outlet property="plantProductionButton" destination="QLF-wU-bcY" id="fCV-bn-baD"/>
+                        <outlet property="plantsButton" destination="Wc5-os-oSg" id="9Wx-V7-FW6"/>
+                        <outlet property="steelButton" destination="HYf-I6-r42" id="Yaa-Tt-Zs6"/>
+                        <outlet property="steelProductionButton" destination="lKp-ub-VD1" id="dP8-hI-Rhg"/>
+                        <outlet property="terraformRatingButton" destination="mwj-og-fUe" id="hxV-kk-tx7"/>
+                        <outlet property="titaniumButton" destination="dG9-f1-HHT" id="FfU-Pp-aaM"/>
+                        <outlet property="titaniumProductionButton" destination="sAV-wv-8gU" id="Nx2-2r-0G1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <screenEdgePanGestureRecognizer minimumNumberOfTouches="1" id="Fyu-Ho-brQ"/>
+            </objects>
+            <point key="canvasLocation" x="32.74647887323944" y="35.625"/>
+        </scene>
+        <!--Popover Controller-->
+        <scene sceneID="cw0-Us-hf5">
+            <objects>
+                <viewController storyboardIdentifier="PopOver" id="O94-CE-ssk" customClass="PopoverController" customModule="Counter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Quh-A9-CzZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="7Oy-mX-uGI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dyT-pP-l5h">
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xue-bm-J86">
+                                <rect key="frame" x="257" y="145" width="55" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ydP-4z-pFl">
+                                <rect key="frame" x="320" y="145" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="+"/>
+                                <connections>
+                                    <action selector="incrementResourceValue:" destination="O94-CE-ssk" eventType="touchUpInside" id="4YG-9K-cIy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yYq-2t-OcS">
+                                <rect key="frame" x="219" y="145" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="-"/>
+                                <connections>
+                                    <action selector="decrementResourceValue:" destination="O94-CE-ssk" eventType="touchUpInside" id="3Dg-wn-edf"/>
+                                </connections>
+                            </button>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uUC-U5-HN6">
+                                <rect key="frame" x="0.0" y="0.0" width="568" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Title" id="Pp3-3Y-rgc">
+                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="59F-Sf-09Y">
+                                            <connections>
+                                                <action selector="cancelOutOfPopover" destination="O94-CE-ssk" id="gTY-N1-z0r"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Save" id="n7Y-KR-698">
+                                            <connections>
+                                                <action selector="dismissPopoverAndSave" destination="O94-CE-ssk" id="Nad-gP-ceV"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZcL-Sd-FYP">
+                                <rect key="frame" x="358" y="145" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="5+"/>
+                                <connections>
+                                    <action selector="incrementResourceByFive:" destination="O94-CE-ssk" eventType="touchUpInside" id="2xi-Ku-FAv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eZ3-6p-d9C">
+                                <rect key="frame" x="181" y="145" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="5-"/>
+                                <connections>
+                                    <action selector="decrementResourceByFive:" destination="O94-CE-ssk" eventType="touchUpInside" id="EZe-Yh-J7P"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                    </view>
+                    <connections>
+                        <outlet property="headerLabel" destination="Pp3-3Y-rgc" id="Dqf-Xi-guK"/>
+                        <outlet property="resourceValueLabel" destination="xue-bm-J86" id="Xe5-vw-WYf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mcY-iJ-0nc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="33" y="814"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="template.jpg" width="1000" height="667"/>
+    </resources>
+</document>
