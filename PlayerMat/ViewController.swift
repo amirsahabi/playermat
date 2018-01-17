@@ -134,6 +134,44 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate 
     @IBAction func heatProductionSent(_ sender: Any) {
         resourceWasTouched(sender:sender)
     }
+    @IBAction func convertPlants(_ sender: Any) {
+        if plantsVal >= 8 {
+            presentConvert8ResourceAlert(resource:"Plants") }
+        else {
+            presentErrorAlert(resource: "Plants")
+        }
+    }
+    
+    @IBAction func convertHeat(_ sender: Any) {
+        print("here")
+        if heatVal >= 8 {
+            presentConvert8ResourceAlert(resource: "Heat")
+        } else {
+            presentErrorAlert(resource:"Heat")
+        }
+    }
+    
+    func presentErrorAlert(resource: String) {
+        let alert = UIAlertController(title: "Not enough " + resource + " to convert", message: nil, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+
+        present(alert, animated: true, completion: nil)
+
+    }
+    
+    func presentConvert8ResourceAlert(resource:String) {
+        let alert = UIAlertController(title: "Convert 8 " + resource + "?", message: nil, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: { (action: UIAlertAction!) in
+            if resource == "Plants" {
+                self.plantsVal -= 8
+            } else if resource == "Heat" {
+                self.heatVal -= 8
+            }
+            self.updateAllLabels()
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default, handler:nil))
+        present(alert, animated: true, completion: nil)
+    }
     
     func resourceWasTouched(_ sender: Any) {
         let button = sender as! UIButton
@@ -149,11 +187,6 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate 
         popover.permittedArrowDirections = UIPopoverArrowDirection.any
         present(vc, animated: true, completion: nil)
     }
-    
-    func popoverIsFinished(value: Int, resourceName: String) {
-        
-    }
-    
     
     let resourceFontSize = CGFloat(52)
     let productionFontSize = CGFloat(26)
