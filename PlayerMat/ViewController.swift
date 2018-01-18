@@ -283,6 +283,7 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate 
         let popover = vc.popoverPresentationController!
         popover.delegate = self
         popover.permittedArrowDirections = UIPopoverArrowDirection.any
+        popover.sourceView = button
         present(vc, animated: true, completion: nil)
     }
     
