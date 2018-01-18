@@ -12,17 +12,113 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // set all labels to 0 on start up
+        
+        loadUserValues()
+        
+        // set all labels to init vals on start up
         updateAllLabels()
         
         // set up gesture recognizer
-        screenEdgeRecognizer = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(ViewController.continueToNextGeneration))
-        screenEdgeRecognizer.edges = .left
-        view.addGestureRecognizer(screenEdgeRecognizer)
+        leftScreenEdgeRecognizer = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(ViewController.continueToNextGeneration))
+        leftScreenEdgeRecognizer.edges = .left
+        
+        rightScreenEdgeRecognizer = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(ViewController.resetGames))
+        rightScreenEdgeRecognizer.edges = .right
+        
+        view.addGestureRecognizer(leftScreenEdgeRecognizer)
+        view.addGestureRecognizer(rightScreenEdgeRecognizer)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func loadUserValues() {
+        if userDefaults.object(forKey: "terraformRating") != nil {
+            terraformRating = userDefaults.integer(forKey: "terraformRating")
+        } else {
+            terraformRating = 20
+        }
+        moneyVal = userDefaults.integer(forKey: "moneyVal")
+        if userDefaults.object(forKey: "moneyProductionVal") != nil {
+            moneyProductionVal = userDefaults.integer(forKey: "moneyProductionVal")
+        } else {
+            moneyProductionVal = 1
+        }
+        plantsVal = userDefaults.integer(forKey: "plantsVal")
+        if userDefaults.object(forKey: "plantProductionVal") != nil {
+            plantProductionVal = userDefaults.integer(forKey: "plantProductionVal")
+        } else {
+            plantProductionVal = 1
+        }
+        steelVal = userDefaults.integer(forKey: "steelVal")
+        if userDefaults.object(forKey: "steelProductionVal") != nil {
+            steelProductionVal = userDefaults.integer(forKey: "steelProductionVal")
+        } else {
+            steelProductionVal = 1
+        }
+        energyVal = userDefaults.integer(forKey: "energyVal")
+        if userDefaults.object(forKey: "energyProductionVal") != nil {
+            energyProductionVal = userDefaults.integer(forKey: "energyProductionVal")
+        } else {
+            energyProductionVal = 1
+        }
+        titaniumVal = userDefaults.integer(forKey: "titaniumVal")
+        if userDefaults.object(forKey: "titaniumProductionVal") != nil {
+            titaniumProductionVal = userDefaults.integer(forKey: "titaniumProductionVal")
+        } else {
+            titaniumProductionVal = 1
+        }
+        heatVal = userDefaults.integer(forKey: "heatVal")
+        if userDefaults.object(forKey: "heatProductionVal") != nil {
+            heatProductionVal = userDefaults.integer(forKey: "heatProductionVal")
+        } else {
+            heatProductionVal = 1
+        }
+    }
+    
+    func saveUserValues() {
+        userDefaults.set(terraformRating, forKey: "terraformRating")
+        userDefaults.set(moneyVal, forKey: "moneyVal")
+        userDefaults.set(moneyProductionVal, forKey: "moneyProductionVal")
+        userDefaults.set(plantsVal, forKey: "plantsVal")
+        userDefaults.set(plantProductionVal, forKey: "plantProductionVal")
+        userDefaults.set(steelVal, forKey: "steelVal")
+        userDefaults.set(steelProductionVal, forKey: "steelProductionVal")
+        userDefaults.set(energyVal, forKey: "energyVal")
+        userDefaults.set(energyProductionVal, forKey: "energyProductionVal")
+        userDefaults.set(titaniumVal, forKey: "titaniumVal")
+        userDefaults.set(titaniumProductionVal, forKey: "titaniumProductionVal")
+        userDefaults.set(heatVal, forKey: "heatVal")
+        userDefaults.set(heatProductionVal, forKey: "heatProductionVal")
+    }
+    
+    func resetGames(sender: UIScreenEdgePanGestureRecognizer) {
+        if sender.state == .ended {
+            let alert = UIAlertController(title: "Reset Game?", message: nil, preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: { (action: UIAlertAction!) in
+                self.terraformRating = 20
+                
+                self.moneyVal = 0
+                self.plantsVal = 0
+                self.steelVal = 0
+                self.energyVal = 0
+                self.titaniumVal = 0
+                self.heatVal = 0
+                
+                self.moneyProductionVal = 1
+                self.plantProductionVal = 1
+                self.steelProductionVal = 1
+                self.energyProductionVal = 1
+                self.titaniumProductionVal = 1
+                self.heatProductionVal = 1
+                
+                self.updateAllLabels()
+                
+            }))
+            alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default, handler:nil))
+            present(alert, animated: true, completion: nil)
+        }
     }
     
     func continueToNextGeneration(sender: UIScreenEdgePanGestureRecognizer) {
@@ -77,6 +173,8 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate 
         heatButton.titleLabel?.adjustsFontSizeToFitWidth = true
         heatProductionButton.titleLabel?.adjustsFontSizeToFitWidth = true
         terraformRatingButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        
+        saveUserValues()
     }
     
     func createAttributedText(value: Int, size: CGFloat) -> NSAttributedString {
@@ -188,10 +286,12 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate 
         present(vc, animated: true, completion: nil)
     }
     
+    let userDefaults: UserDefaults = UserDefaults.standard
     let resourceFontSize = CGFloat(52)
     let productionFontSize = CGFloat(26)
     
-    var screenEdgeRecognizer: UIScreenEdgePanGestureRecognizer!
+    var leftScreenEdgeRecognizer: UIScreenEdgePanGestureRecognizer!
+    var rightScreenEdgeRecognizer: UIScreenEdgePanGestureRecognizer!
     var terraformRating = 20
     
     var moneyVal = 0
